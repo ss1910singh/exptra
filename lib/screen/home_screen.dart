@@ -7,7 +7,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: //page container
-          SizedBox(
+          Container(
         child:
             //balance,income,expance card
             Container(
@@ -56,7 +56,6 @@ class HomeScreen extends StatelessWidget {
             ),
           ]),
         ),
-        Text('hello'),
       ),
     );
   }
