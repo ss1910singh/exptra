@@ -1,9 +1,11 @@
+// ignore_for_file: prefer_const_constructors, use_build_context_synchronously, sort_child_properties_last
+
+import 'package:exptra/widgets/navbar.dart';
 import 'package:exptra/screen/home_screen.dart';
 import 'package:exptra/screen/login_screen.dart';
 import 'package:exptra/screen/profile_screen.dart';
 import 'package:exptra/screen/stats_screen.dart';
 import 'package:exptra/screen/transaction_screen.dart';
-import 'package:exptra/widgets/navbar.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -41,7 +43,9 @@ class _LandingPageState extends State<LandingPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
-        onPressed: () { print('TODO: Implement'); },
+        onPressed: () {
+          print('TODO: Implement');
+        },
         child: Icon(Icons.add),
         shape: CircleBorder(),
         elevation: 0.0,

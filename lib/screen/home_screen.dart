@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -6,11 +8,10 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: //page container
-          Container(
-        child:
-            //balance,income,expance card
-            Container(
+      body: Container(
+        // page container
+        child: Container(
+          //balance,income,expance card
           width: 350,
           height: 250,
           decoration: BoxDecoration(

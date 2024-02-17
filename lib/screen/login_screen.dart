@@ -1,10 +1,10 @@
+// ignore_for_file: prefer_const_constructors_in_immutables, prefer_const_constructors
+
 import 'package:exptra/screen/sign_up.dart';
 import 'package:exptra/services/auth_service.dart';
 import 'package:flutter/material.dart';
-
 import '../utils/appvalidator.dart';
 
-// ignore: must_be_immutable
 class LoginView extends StatefulWidget {
   LoginView({super.key});
 
@@ -14,10 +14,13 @@ class LoginView extends StatefulWidget {
 
 class _LoginViewState extends State<LoginView> {
   final GlobalKey<FormState> _formkey = GlobalKey<FormState>();
+
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
+
   var isLoader = false;
   var authService = AuthServices();
+  var appValidator = AppValidator();
 
   Future<void> _submitForm() async {
     if (_formkey.currentState!.validate()) {
@@ -37,14 +40,12 @@ class _LoginViewState extends State<LoginView> {
     }
   }
 
-  var appValidator = AppValidator();
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Sign in'),
-        bottom: const PreferredSize(
+        title: Text('Sign in'),
+        bottom: PreferredSize(
           preferredSize: Size.fromHeight(20.0),
           child: Padding(
             padding: EdgeInsets.only(bottom: 8.0),
@@ -59,7 +60,7 @@ class _LoginViewState extends State<LoginView> {
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: EdgeInsets.all(16.0),
         child: Form(
             key: _formkey,
             child: Column(
@@ -74,7 +75,7 @@ class _LoginViewState extends State<LoginView> {
                           borderRadius: BorderRadius.circular(10.0))),
                   validator: appValidator.validateEmail,
                 ),
-                const SizedBox(
+                SizedBox(
                   height: 20.0,
                 ),
                 TextFormField(
@@ -86,7 +87,7 @@ class _LoginViewState extends State<LoginView> {
                           borderRadius: BorderRadius.circular(10.0))),
                   validator: appValidator.validatePassword,
                 ),
-                const SizedBox(
+                SizedBox(
                   height: 20.0,
                 ),
                 SizedBox(
@@ -98,7 +99,7 @@ class _LoginViewState extends State<LoginView> {
                     },
                     child: isLoader
                         ? Center(child: CircularProgressIndicator())
-                        : const Text("Login"),
+                        : Text("Login"),
                   ),
                 ),
                 SizedBox(
