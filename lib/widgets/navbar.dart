@@ -23,10 +23,6 @@ class NavBar extends StatelessWidget {
           icon: Icon(Icons.payment),
           label: 'Transaction',
         ),
-        // NavigationDestination(
-        //   icon: Icon(Icons.add),
-        //   label: 'Add',
-        // ),
         NavigationDestination(
           icon: Icon(Icons.bar_chart),
           label: 'Stats',

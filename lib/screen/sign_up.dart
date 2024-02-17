@@ -1,4 +1,4 @@
-// ignore_for_file: unused_local_variable
+// ignore_for_file: prefer_const_constructors_in_immutables, use_build_context_synchronously, prefer_const_constructors
 
 import 'package:exptra/screen/landing_page.dart';
 import 'package:exptra/screen/login_screen.dart';
@@ -17,13 +17,12 @@ class _SignUpViewState extends State<SignUpView> {
   final GlobalKey<FormState> _formkey = GlobalKey<FormState>();
 
   final _usernameController = TextEditingController();
-
   final _emailController = TextEditingController();
-
   final _passwordController = TextEditingController();
 
   var authService = AuthServices();
   var isLoader = false;
+  var appValidator = AppValidator();
 
   Future<void> _submitForm() async {
     if (_formkey.currentState!.validate()) {
@@ -37,6 +36,7 @@ class _SignUpViewState extends State<SignUpView> {
         "password": _passwordController.text,
       };
 
+      // TODO: check if the user already exists or not
       await authService.createUser(data, context);
       // ignore: use_build_context_synchronously
       Navigator.pushReplacement(context,
@@ -48,8 +48,6 @@ class _SignUpViewState extends State<SignUpView> {
       //   const SnackBar(content: Text('Account created')),
     }
   }
-
-  var appValidator = AppValidator();
 
   @override
   Widget build(BuildContext context) {
@@ -85,7 +83,7 @@ class _SignUpViewState extends State<SignUpView> {
                           borderRadius: BorderRadius.circular(10.0))),
                   validator: appValidator.validateUsername,
                 ),
-                const SizedBox(
+                SizedBox(
                   height: 20.0,
                 ),
                 TextFormField(
@@ -98,7 +96,7 @@ class _SignUpViewState extends State<SignUpView> {
                           borderRadius: BorderRadius.circular(10.0))),
                   validator: appValidator.validateEmail,
                 ),
-                const SizedBox(
+                SizedBox(
                   height: 20.0,
                 ),
                 TextFormField(
@@ -110,7 +108,7 @@ class _SignUpViewState extends State<SignUpView> {
                           borderRadius: BorderRadius.circular(10.0))),
                   validator: appValidator.validatePassword,
                 ),
-                const SizedBox(
+                SizedBox(
                   height: 20.0,
                 ),
                 SizedBox(
