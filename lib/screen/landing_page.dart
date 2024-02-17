@@ -40,6 +40,13 @@ class _LandingPageState extends State<LandingPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        onPressed: () { print('TODO: Implement'); },
+        child: Icon(Icons.add),
+        shape: CircleBorder(),
+        elevation: 0.0,
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: NavBar(
         selectedIndex: currentIndex,
         onDestinationSelected: (int value) {
