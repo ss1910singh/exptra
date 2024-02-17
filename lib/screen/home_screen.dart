@@ -7,7 +7,6 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-<<<<<<< HEAD
     return Expanded(
       child: Scaffold(
         body: Container(
@@ -81,18 +80,6 @@ class HomeScreen extends StatelessWidget {
                 ),
               )
             ],
-=======
-    return Scaffold(
-      body: Container(
-        // page container
-        child: Container(
-          //balance,income,expance card
-          width: 350,
-          height: 250,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10.0),
-            color: Colors.yellow,
->>>>>>> dd053f2309fbc45b004df42e09abb5de0e5468ed
           ),
         ),
       ),
