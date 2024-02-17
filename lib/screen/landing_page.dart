@@ -18,10 +18,10 @@ class _LandingPageState extends State<LandingPage> {
   var isLogoutLoading = false;
   int currentIndex = 0;
   var pageViewList = [
-    HomeScreen(),
-    TransactionScreen(),
-    StatsScreen(),
-    ProfileScreen()
+    const HomeScreen(),
+    const TransactionScreen(),
+    const StatsScreen(),
+    const ProfileScreen()
   ];
 
   logout() async {
@@ -29,8 +29,9 @@ class _LandingPageState extends State<LandingPage> {
       isLogoutLoading = true;
     });
     await FirebaseAuth.instance.signOut();
-    Navigator.of(context)
-        .pushReplacement(MaterialPageRoute(builder: (context) => LoginView()));
+    // ignore: use_build_context_synchronously
+    Navigator.of(context).pushReplacement(
+        MaterialPageRoute(builder: (context) => const LoginView()));
 
     setState(() {
       isLogoutLoading = false;
@@ -49,19 +50,19 @@ class _LandingPageState extends State<LandingPage> {
         },
       ),
       appBar: AppBar(
-        title: Text('Hello'),
+        title: const Text('Hello'),
         actions: [
           IconButton(
-            icon: Icon(Icons.menu),
+            icon: const Icon(Icons.menu),
             onPressed: () {
               showMenu(
                 context: context,
-                position: RelativeRect.fromLTRB(100, 100, 0, 0),
+                position: const RelativeRect.fromLTRB(100, 100, 0, 0),
                 items: [
                   PopupMenuItem(
                     child: ListTile(
-                      title: Text('Home'),
-                      leading: Icon(Icons.home),
+                      title: const Text('Home'),
+                      leading: const Icon(Icons.home),
                       onTap: () {
                         setState(() {
                           currentIndex = 0;
@@ -71,8 +72,8 @@ class _LandingPageState extends State<LandingPage> {
                   ),
                   PopupMenuItem(
                     child: ListTile(
-                      title: Text('Transaction'),
-                      leading: Icon(Icons.attach_money),
+                      title: const Text('Transaction'),
+                      leading: const Icon(Icons.attach_money),
                       onTap: () {
                         setState(() {
                           currentIndex = 1;
@@ -82,8 +83,8 @@ class _LandingPageState extends State<LandingPage> {
                   ),
                   PopupMenuItem(
                     child: ListTile(
-                      title: Text('Stats'),
-                      leading: Icon(Icons.bar_chart),
+                      title: const Text('Stats'),
+                      leading: const Icon(Icons.bar_chart),
                       onTap: () {
                         setState(() {
                           currentIndex = 2;
@@ -93,8 +94,8 @@ class _LandingPageState extends State<LandingPage> {
                   ),
                   PopupMenuItem(
                     child: ListTile(
-                      title: Text('Profile'),
-                      leading: Icon(Icons.person),
+                      title: const Text('Profile'),
+                      leading: const Icon(Icons.person),
                       onTap: () {
                         setState(() {
                           currentIndex = 3;
@@ -104,8 +105,8 @@ class _LandingPageState extends State<LandingPage> {
                   ),
                   PopupMenuItem(
                     child: ListTile(
-                      title: Text('Logout'),
-                      leading: Icon(Icons.exit_to_app),
+                      title: const Text('Logout'),
+                      leading: const Icon(Icons.exit_to_app),
                       onTap: () {
                         setState(() {
                           isLogoutLoading = true;

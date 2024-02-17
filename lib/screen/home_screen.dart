@@ -5,56 +5,80 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: //page container
-          Container(
-        child:
-            //balance,income,expance card
-            Container(
-          width: 350,
-          height: 250,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10.0),
-            color: Colors.yellow,
+    return Expanded(
+      child: Scaffold(
+        body: Container(
+          width: double.infinity,
+          color: Colors.black,
+          child: Column(
+            children: [
+              Container(
+                width: 375,
+                height: 250,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10.0),
+                  color: Colors.blue,
+                ),
+                child: Column(
+                  children: [
+                    Text("Account Balance"),
+                    Text("₹1000"),
+                    Row(
+                      children: [
+                        SizedBox(
+                          width: 25,
+                          height: 200,
+                        ),
+                        Container(
+                          width: 150,
+                          height: 75,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10.0),
+                            color: Colors.green,
+                          ),
+                          child: Column(children: [
+                            Text("Income"),
+                            Text("₹1500"),
+                          ]),
+                        ),
+                        SizedBox(
+                          width: 25,
+                        ),
+                        Container(
+                          width: 150,
+                          height: 75,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10.0),
+                            color: Colors.red,
+                          ),
+                          child: Column(children: [
+                            Text("Expanses"),
+                            Text("₹500"),
+                          ]),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+              Container(
+                color: Colors.white,
+                child: Row(
+                  children: [
+                    Container(
+                      color: Colors.yellow,
+                      child: Row(
+                        children: [Text('Recent Transaction'), Text('See all')],
+                      ),
+                    ),
+                    Column(
+                      children: [Text('Recent Transaction'), Text('See all')],
+                    )
+                  ],
+                ),
+              )
+            ],
           ),
-          child: Column(children: [
-            Text('Account Balance'),
-            Text('₹1000'),
-            Container(
-              child: Row(children: [
-                //Income card
-                Container(
-                  width: 150,
-                  height: 100,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10.0),
-                    color: Colors.green,
-                  ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text('Income'),
-                    ],
-                  ),
-                ),
-                //expenses card
-                Container(
-                  width: 150,
-                  height: 100,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10.0),
-                    color: Colors.red,
-                  ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text('Expenses'),
-                    ],
-                  ),
-                ),
-              ]),
-            ),
-          ]),
         ),
       ),
     );

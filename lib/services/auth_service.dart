@@ -11,13 +11,13 @@ class AuthServices {
         password: data['password'],
       );
       Navigator.of(context).pushReplacement(
-          MaterialPageRoute(builder: (context) => LandingPage()));
+          MaterialPageRoute(builder: (context) => const LandingPage()));
     } catch (e) {
       showDialog(
           context: context,
           builder: (context) {
             return AlertDialog(
-              title: Text("Sign up failed"),
+              title: const Text("Sign up failed"),
               content: Text(e.toString()),
             );
           });
@@ -31,13 +31,13 @@ class AuthServices {
         password: data['password'],
       );
       Navigator.of(context).pushReplacement(
-          MaterialPageRoute(builder: (context) => LandingPage()));
+          MaterialPageRoute(builder: (context) => const LandingPage()));
     } catch (e) {
       showDialog(
           context: context,
           builder: (context) {
             return AlertDialog(
-              title: Text("Incorrect email addres or password"),
+              title: const Text("Incorrect email addres or password"),
               content: Text(e.toString()),
             );
           });

@@ -7,7 +7,7 @@ import 'package:exptra/utils/appvalidator.dart';
 import 'package:flutter/material.dart';
 
 class SignUpView extends StatefulWidget {
-  SignUpView({super.key});
+  const SignUpView({super.key});
 
   @override
   State<SignUpView> createState() => _SignUpViewState();
@@ -38,8 +38,9 @@ class _SignUpViewState extends State<SignUpView> {
       };
 
       await authService.createUser(data, context);
-      Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => LandingPage()));
+      // ignore: use_build_context_synchronously
+      Navigator.pushReplacement(context,
+          MaterialPageRoute(builder: (context) => const LandingPage()));
       setState(() {
         isLoader = false;
       });
@@ -117,23 +118,26 @@ class _SignUpViewState extends State<SignUpView> {
                   width: double.infinity,
                   child: ElevatedButton(
                     onPressed: () {
+                      // ignore: avoid_print
                       isLoader ? print("Loading...") : _submitForm();
                     },
                     child: isLoader
-                        ? Center(child: CircularProgressIndicator())
+                        ? const Center(child: CircularProgressIndicator())
                         : const Text("Create"),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20.0,
                 ),
-                Text('Already have an account?'),
+                const Text('Already have an account?'),
                 TextButton(
                   onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => LoginView()));
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const LoginView()));
                   },
-                  child: Text('Sign in'),
+                  child: const Text('Sign in'),
                 )
               ],
             )),

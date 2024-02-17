@@ -6,7 +6,7 @@ import '../utils/appvalidator.dart';
 
 // ignore: must_be_immutable
 class LoginView extends StatefulWidget {
-  LoginView({super.key});
+  const LoginView({super.key});
 
   @override
   State<LoginView> createState() => _LoginViewState();
@@ -94,26 +94,29 @@ class _LoginViewState extends State<LoginView> {
                   width: double.infinity,
                   child: ElevatedButton(
                     onPressed: () {
+                      // ignore: avoid_print
                       isLoader ? print("Loading...") : _submitForm();
                     },
                     child: isLoader
-                        ? Center(child: CircularProgressIndicator())
+                        ? const Center(child: CircularProgressIndicator())
                         : const Text("Login"),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20.0,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20.0,
                 ),
-                Text("Don't have an account?"),
+                const Text("Don't have an account?"),
                 TextButton(
                   onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => SignUpView()));
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const SignUpView()));
                   },
-                  child: Text('Sign up'),
+                  child: const Text('Sign up'),
                 )
               ],
             )),

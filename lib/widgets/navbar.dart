@@ -16,7 +16,7 @@ class NavBar extends StatelessWidget {
       // labelBehavior: NavigationDestinationLabelBehavior.alwaysHide,
       destinations: const <Widget>[
         NavigationDestination(
-          icon: Icon(Icons.explore),
+          icon: Icon(Icons.home),
           label: 'Home',
         ),
         NavigationDestination(
