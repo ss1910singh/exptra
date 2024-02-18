@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors_in_immutables, use_build_context_synchronously, prefer_const_constructors
-
 import 'package:exptra/screen/landing_page.dart';
 import 'package:exptra/screen/login_screen.dart';
 import 'package:exptra/services/auth_service.dart';
@@ -38,14 +36,13 @@ class _SignUpViewState extends State<SignUpView> {
 
       // TODO: check if the user already exists or not
       await authService.createUser(data, context);
-      // ignore: use_build_context_synchronously
       Navigator.pushReplacement(context,
           MaterialPageRoute(builder: (context) => const LandingPage()));
       setState(() {
         isLoader = false;
       });
       // ScaffoldMessenger.of(_formkey.currentContext!).showSnackBar(
-      //   const SnackBar(content: Text('Account created')),
+      //   SnackBar(content: Text('Account created')),
     }
   }
 
@@ -53,8 +50,8 @@ class _SignUpViewState extends State<SignUpView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Signup'),
-        bottom: const PreferredSize(
+        title: Text('Signup'),
+        bottom: PreferredSize(
           preferredSize: Size.fromHeight(20.0),
           child: Padding(
             padding: EdgeInsets.only(bottom: 8.0),
@@ -69,7 +66,7 @@ class _SignUpViewState extends State<SignUpView> {
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: EdgeInsets.all(16.0),
         child: Form(
             key: _formkey,
             child: Column(
@@ -116,26 +113,23 @@ class _SignUpViewState extends State<SignUpView> {
                   width: double.infinity,
                   child: ElevatedButton(
                     onPressed: () {
-                      // ignore: avoid_print
                       isLoader ? print("Loading...") : _submitForm();
                     },
                     child: isLoader
-                        ? const Center(child: CircularProgressIndicator())
-                        : const Text("Create"),
+                        ? Center(child: CircularProgressIndicator())
+                        : Text("Create"),
                   ),
                 ),
-                const SizedBox(
+                SizedBox(
                   height: 20.0,
                 ),
-                const Text('Already have an account?'),
+                Text('Already have an account?'),
                 TextButton(
                   onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const LoginView()));
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => LoginView()));
                   },
-                  child: const Text('Sign in'),
+                  child: Text('Sign in'),
                 )
               ],
             )),

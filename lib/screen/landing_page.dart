@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors, use_build_context_synchronously, sort_child_properties_last
-
 import 'package:exptra/widgets/navbar.dart';
 import 'package:exptra/screen/home_screen.dart';
 import 'package:exptra/screen/login_screen.dart';
@@ -31,7 +29,6 @@ class _LandingPageState extends State<LandingPage> {
       isLogoutLoading = true;
     });
     await FirebaseAuth.instance.signOut();
-    // ignore: use_build_context_synchronously
     Navigator.of(context).pushReplacement(
         MaterialPageRoute(builder: (context) => const LoginView()));
 

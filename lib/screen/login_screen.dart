@@ -101,14 +101,14 @@ class _LoginViewState extends State<LoginView> {
                     isLoader ? print("Loading...") : _submitForm();
                   },
                   child: isLoader
-                      ? const Center(child: CircularProgressIndicator())
-                      : const Text("Login"),
+                      ? Center(child: CircularProgressIndicator())
+                      : Text("Login"),
                 ),
               ),
-              const SizedBox(
+              SizedBox(
                 height: 20.0,
               ),
-              const Text("Don't have an account?"),
+              Text("Don't have an account?"),
               TextButton(
                 onPressed: () {
                   Navigator.push(
@@ -116,7 +116,7 @@ class _LoginViewState extends State<LoginView> {
                     MaterialPageRoute(builder: (context) => const SignUpView()),
                   );
                 },
-                child: const Text('Sign up'),
+                child: Text('Sign up'),
               )
             ],
           ),

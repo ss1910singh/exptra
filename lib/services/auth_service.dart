@@ -1,11 +1,8 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:exptra/screen/landing_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class AuthServices {
-// ignore: non_constant_identifier_names
   createUser(data, context) async {
     try {
       await FirebaseAuth.instance.createUserWithEmailAndPassword(
@@ -19,7 +16,7 @@ class AuthServices {
           context: context,
           builder: (context) {
             return AlertDialog(
-              title: const Text("Sign up failed"),
+              title: Text("Sign up failed"),
               content: Text(e.toString()),
             );
           });
@@ -39,7 +36,7 @@ class AuthServices {
           context: context,
           builder: (context) {
             return AlertDialog(
-              title: const Text("Incorrect email addres or password"),
+              title: Text("Incorrect email address or password"),
               content: Text(e.toString()),
             );
           });
