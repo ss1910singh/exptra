@@ -1,3 +1,4 @@
+import 'package:exptra/screen/new_expense_overlay.dart';
 import 'package:exptra/widgets/navbar.dart';
 import 'package:exptra/screen/home_screen.dart';
 import 'package:exptra/screen/login_screen.dart';
@@ -24,6 +25,10 @@ class _LandingPageState extends State<LandingPage> {
     const ProfileScreen()
   ];
 
+  void showNewExpenseOverlay() {
+    // TOOD: show the `NewExpenseOverlay`
+  }
+
   logout() async {
     setState(() {
       isLogoutLoading = true;
@@ -42,7 +47,7 @@ class _LandingPageState extends State<LandingPage> {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          print('TODO: Implement');
+          showNewExpenseOverlay();
         },
         child: Icon(Icons.add),
         shape: CircleBorder(),
